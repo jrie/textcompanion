@@ -1,0 +1,24 @@
+{
+  "developer": {
+    "name": "Jan Riechers",
+    "url": "https://dwrox.net"
+  },
+  "description": "Text-loving friend for the average internet user",
+  "homepage_url": "https://github.com/jrie/textcompanion",
+  "manifest_version": 2,
+  "name": "TextCompanion",
+  "version": "0.0.7",
+  "permissions": ["<all_urls>", "storage", "activeTab", "tabs"],
+  "options_ui": {
+    "page": "page_settings.html",
+    "browser_style": true
+  },
+  "background": {
+    "scripts": ["textcompanion_bg.js"]
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["textcompanion.js"],
+    "css": ["textcompanion.css"]
+  }]
+}

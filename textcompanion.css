@@ -1,0 +1,124 @@
+/* Addon UI styles */
+div#textCompanionOverlay {
+    height: auto;
+    padding: 0.35em 0.5em;
+    background-color: black;
+    position: absolute;
+    border-radius: 9px;
+    font-size: 0.75em;
+    opacity: 1.0;
+    transition: opacity 350ms ease-in;
+    display: flex;
+    pointer-events: all;
+    font-size: 12px;
+    z-index: 1000;
+}
+
+div#textCompanionOverlay.disabled {
+    opacity: 0.0;
+    pointer-events: none;
+}
+
+div#textCompanionOverlay>button {
+    box-sizing: border-box;
+    display: block;
+    color: black;
+    border: 2px solid orange;
+    font-size: inherit;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: border, background-color 200ms ease-out;
+    margin-right: 0.5em;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    text-indent: -1000px;
+    background-position: center center;
+    background-size: 30px 30px;
+    background-color: red;
+    background-repeat: no-repeat;
+    margin: 0px 0.5em 0px 0px;
+}
+
+div#textCompanionOverlay>button:last-of-type {
+    margin-right: 0em;
+}
+
+div#textCompanionOverlay>button#tc__translateButton {
+    background-image: url('img/language-solid.svg');
+}
+
+div#textCompanionOverlay>button#tc__openLinkButton {
+    background-image: url('img/square-arrow-up-right-solid.svg');
+}
+
+div#textCompanionOverlay>button#tc__wiktionaryButton {
+    background-image: url('img/spell-check-solid.svg');
+}
+
+div#textCompanionOverlay>button#tc__googleSelectionButton {
+    background-image: url('img/magnifying-glass-solid.svg');
+}
+
+div#textCompanionOverlay>button#tc__geizhalsButton {
+    background-image: url('img/cart-shopping-solid.svg');
+}
+
+div#textCompanionOverlay>button:disabled {
+    border: 2px solid black;
+    color: grey;
+    background-color: darkgrey;
+    cursor: default;
+}
+
+div#textCompanionOverlay>button:hover:not(:disabled) {
+    background-color: yellow;
+    border: 2px solid black;
+}
+
+/* Settings page styles */
+#settings {
+    color: black;
+}
+
+#settings h1 {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 0.3em;
+}
+
+#settings h3 {
+    margin: 0px;
+    padding: 0.15ch 0px 0.6ch 0px;
+}
+
+#settings {
+    padding: 0.5em 1em;
+}
+#settingsArea {
+    padding: 0.3em 1em;
+}
+
+.settingsArea > hr {
+    margin: 0.95em 0px;
+    display: block;
+    border: 0;
+    border-bottom: 1px dashed darkslategray;
+}
+
+#buttonSettings > label  {
+    display: inline-block;
+    width: calc(50% - 0.6em);
+}
+
+#urlSettings > label {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+#urlSettings > label > input {
+    display: block;
+    width: 100%;
+    margin-top: 0.25em;
+}
