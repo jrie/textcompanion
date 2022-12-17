@@ -19,7 +19,7 @@
   "content_scripts": [{
     "matches": ["http://*/*", "https://*/*"],
     "js": ["textcompanion.js"],
-    "css": ["textcompanion.css"]
+    "css": ["textcompanion_chrome.css"]
   }],
   "web_accessible_resources": [
     {
