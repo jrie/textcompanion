@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TextCompanion settings</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="chrome-extension://fdcgcpbkigjflgbbidammjpemmlanhfp/textcompanion.css" />
+</head>
+
+<body id="settings">
+    <h1>TextCompanion settings</h1>
+    <div class="settingsArea" id="buttonSettings">
+        <hr />
+        <h3>Active overlay buttons</h3>
+        <label>
+            <input type="checkbox" class="buttonOption" id="tc__translateButton">
+            Translate selection using DeepL.com
+        </label>
+        <label>
+            <input type="checkbox" class="buttonOption" id="tc__openLinkButton">
+            Open links in background
+        </label>
+        <label>
+            <input type="checkbox" class="buttonOption" id="tc__wiktionaryButton">
+            Look up in Wiktionary
+        </label>
+        <label>
+            <input type="checkbox" class="buttonOption" id="tc__geizhalsButton">
+            Look up in Geizhals.eu
+        </label>
+        <label>
+            <input type="checkbox" class="buttonOption" id="tc__googleSelectionButton">
+            Google.com selection
+        </label>
+        <hr/>
+    </div>
+
+    <div class="settingsArea" id="textSettings">
+        <h3>Translation settings</h3>
+        <label>
+            Used language code, like &quot;en&quot;, &quot;pl&quot;, &quot;fr&quot;, &quot;de&quot;...<br><br>This is used for translation, lookup and search:
+            <input type="text" class="textOption" id="tc__translateLanguage" maxlength="2" placeholder="en" length="4" title="Use &quot;en&quot; for English, &quot;de&quot; for German, or &quot;fr&quot; for French, and so on.">
+        </label>
+        <hr/>
+    </div>
+
+    <script type="text/javascript" src="textcompanion.js"></script>
+</body>
+</html>
