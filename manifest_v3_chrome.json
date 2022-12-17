@@ -1,0 +1,36 @@
+{
+  "description": "Text-loving friend for the average internet user",
+  "homepage_url": "https://github.com/jrie/textcompanion",
+  "manifest_version": 3,
+  "name": "TextCompanion",
+  "version": "0.0.7",
+  "permissions": ["storage", "activeTab", "tabs"],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqLTBE6FGarrOqZgsDRWLDu5/8gtIVvcgWDBA0qovfS/pF2mAIX2xMienR+JBNqkxtHtn3mjGBCtSYDuC/3GSzd6BcMgfp/AY5y/OQBKiKHUSv+2wzKIxU47tLv7BOXZcvfDI+cYdA4EQErwcY/nZGLMDvrTSBlQuDuFj0R6DxPRqRZYCI1oPvYigW4wXfCmLTKj4oQ75lK0WVc938Ew/8boutS0CTcsHi0YVFLoiFOaVjjGdNk0dap9HXXDuD+G82Xpk1BNsQIDLKJG0eY0eO6pzGODXgXP07cmH1qAF46KcD46n26RhLaq5WqY7l3tfH/6Y7Ves1+tD5SZjd0hyOwIDAQAB",
+  "options_ui": {
+    "page": "page_settings.html",
+    "browser_style": true
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "textcompanion_bg.js"
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["textcompanion.js"],
+    "css": ["textcompanion.css"]
+  }],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "img/language-solid.svg",
+        "img/magnifying-glass-solid.svg",
+        "img/spell-check-solid.svg",
+        "img/square-arrow-up-right-solid.svg",
+        "img/cart-shopping-solid.svg"
+      ],
+      "matches": [ "<all_urls>" ]
+    }
+  ]
+}
