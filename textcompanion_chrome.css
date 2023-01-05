@@ -1,3 +1,7 @@
+body {
+    background-color: whitesmoke;
+}
+
 div#textCompanionOverlay {
     box-sizing: border-box;
     padding: 0.35em 0.5em;
@@ -44,23 +48,23 @@ div#textCompanionOverlay>button:last-of-type {
 }
 
 div#textCompanionOverlay>button#tc__translateButton {
-    background-image: url('chrome-extension://fdcgcpbkigjflgbbidammjpemmlanhfp/img/language-solid.svg');
+    background-image: url('chrome-extension://blmdednedmcbdkeoppfhphhfmelmpjkc/img/language-solid.svg');
 }
 
 div#textCompanionOverlay>button#tc__openLinkButton {
-    background-image: url('chrome-extension://fdcgcpbkigjflgbbidammjpemmlanhfp/img/square-arrow-up-right-solid.svg');
+    background-image: url('chrome-extension://blmdednedmcbdkeoppfhphhfmelmpjkc/img/square-arrow-up-right-solid.svg');
 }
 
 div#textCompanionOverlay>button#tc__wiktionaryButton {
-    background-image: url('chrome-extension://fdcgcpbkigjflgbbidammjpemmlanhfp/img/spell-check-solid.svg');
+    background-image: url('chrome-extension://blmdednedmcbdkeoppfhphhfmelmpjkc/img/spell-check-solid.svg');
 }
 
 div#textCompanionOverlay>button#tc__googleSelectionButton {
-    background-image: url('chrome-extension://fdcgcpbkigjflgbbidammjpemmlanhfp/img/magnifying-glass-solid.svg');
+    background-image: url('chrome-extension://blmdednedmcbdkeoppfhphhfmelmpjkc/img/magnifying-glass-solid.svg');
 }
 
 div#textCompanionOverlay>button#tc__geizhalsButton {
-    background-image: url('chrome-extension://fdcgcpbkigjflgbbidammjpemmlanhfp/img/cart-shopping-solid.svg');
+    background-image: url('chrome-extension://blmdednedmcbdkeoppfhphhfmelmpjkc/img/cart-shopping-solid.svg');
 }
 
 div#textCompanionOverlay>button:disabled {

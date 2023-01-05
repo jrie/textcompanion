@@ -3,9 +3,9 @@
   "homepage_url": "https://github.com/jrie/textcompanion",
   "manifest_version": 3,
   "name": "TextCompanion",
-  "version": "0.0.7",
-  "permissions": ["storage", "activeTab", "tabs"],
-  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqLTBE6FGarrOqZgsDRWLDu5/8gtIVvcgWDBA0qovfS/pF2mAIX2xMienR+JBNqkxtHtn3mjGBCtSYDuC/3GSzd6BcMgfp/AY5y/OQBKiKHUSv+2wzKIxU47tLv7BOXZcvfDI+cYdA4EQErwcY/nZGLMDvrTSBlQuDuFj0R6DxPRqRZYCI1oPvYigW4wXfCmLTKj4oQ75lK0WVc938Ew/8boutS0CTcsHi0YVFLoiFOaVjjGdNk0dap9HXXDuD+G82Xpk1BNsQIDLKJG0eY0eO6pzGODXgXP07cmH1qAF46KcD46n26RhLaq5WqY7l3tfH/6Y7Ves1+tD5SZjd0hyOwIDAQAB",
+  "version": "0.0.8",
+  "permissions": ["storage", "activeTab"],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg9YfHmud+/Ff/T+A2K7urnXZ83xO2yktwziaQ4cQPq4uv024pgy4Jv621iuOFs4v+P1lcZc59ikVl+ltYr+kfPSV4YplUr5d8sr4iEmGXCIYyMghfdYmmF3itRC7+VxEVTdHwBToTaaBAptxgGAzXw3k2g7C9B1V5BiNPJqWfp0DULkPsuDqVO/zJUGwrN258/AZ3wQH8fc2eKKcWMQFyKsOBi3j97Gl/3Mvghvr0tGEl5B7RfgkWazqaHWGuphJIIQHttVPR2oQzXOL0GcTcN+3SHrYSngWdZJq5Ptypuh+ZjJRKCkTT3k8OoAtwWY76BSeVTd96kkzjyp8DKqR/wIDAQAB",
   "options_ui": {
     "page": "page_settings_chrome.html",
     "browser_style": true
