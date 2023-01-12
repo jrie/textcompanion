@@ -4,6 +4,8 @@ const useChrome = typeof (browser) === 'undefined'
 // --------------------------------------------------------------------
 let foundLinks = []
 let hasLinks = false
+let textLinks = []
+let hasTextLinks = false
 let selectedText = ''
 const localData = {
   tc__translateButton: true,
@@ -11,6 +13,7 @@ const localData = {
   tc__wiktionaryButton: true,
   tc__geizhalsButton: true,
   tc__googleSelectionButton: true,
+  tc__openTextLinkButton: true,
   tc__translateLanguage: 'en'
 }
 
@@ -32,6 +35,13 @@ function findLinks (selection) {
 
     html += srcParent.outerHTML
     parents.push(srcParent.parentNode)
+  }
+
+  hasTextLinks = false
+  textLinks = selection.toString().match(/(http|https):\/\/.[^ ]*/gi)
+  if (textLinks !== null) {
+    hasTextLinks = true
+    console.log('Found ' + textLinks.length + ' textlinks in selection')
   }
 
   let links = html.match(/href=["'][^"']*/gi)
@@ -82,6 +92,18 @@ function findLinks (selection) {
   }
 
   return false
+}
+
+// --------------------------------------------------------------------
+function openTextLinkTabsInBackground (evt) {
+  evt.preventDefault()
+  if (window.confirm('This will open ' + textLinks.length + ' ' + (textLinks.length === 1 ? 'tab' : 'tabs') + ', proceed?')) {
+    if (useChrome) {
+      chrome.runtime.sendMessage({ links: textLinks })
+    } else {
+      browser.runtime.sendMessage({ links: textLinks })
+    }
+  }
 }
 
 // --------------------------------------------------------------------
@@ -313,6 +335,23 @@ function recreateUI () {
     }
 
     overlayDiv.appendChild(openLinkButton)
+    hasElement = true
+  }
+
+  if (hasActiveButtonInConfig('tc__openTextLinkButton')) {
+    const openTextLinkButton = document.createElement('button')
+    openTextLinkButton.href = '#'
+    openTextLinkButton.id = 'tc__openTextLinkButton'
+    openTextLinkButton.title = 'Open selected text links in background'
+    openTextLinkButton.appendChild(document.createTextNode(openTextLinkButton.title))
+
+    if (hasTextLinks) {
+      openTextLinkButton.addEventListener('click', openTextLinkTabsInBackground)
+    } else {
+      openTextLinkButton.setAttribute('disabled', 'disabled')
+    }
+
+    overlayDiv.appendChild(openTextLinkButton)
     hasElement = true
   }
 

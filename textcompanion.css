@@ -1,4 +1,8 @@
 /* Addon UI styles */
+body {
+    background-color: whitesmoke;
+}
+
 div#textCompanionOverlay {
     height: auto;
     padding: 0.35em 0.5em;
@@ -62,6 +66,10 @@ div#textCompanionOverlay>button#tc__googleSelectionButton {
 
 div#textCompanionOverlay>button#tc__geizhalsButton {
     background-image: url('img/cart-shopping-solid.svg');
+}
+
+div#textCompanionOverlay>button#tc__openTextLinkButton {
+    background-image: url('img/link-solid.svg');
 }
 
 div#textCompanionOverlay>button:disabled {
