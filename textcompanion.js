@@ -254,21 +254,23 @@ function updateMouseData (evt) {
       if (selection.type !== 'Range') {
         existingOverlayDiv.classList.add('disabled')
         return
+      } else if (!existingOverlayDiv.classList.contains('disabled')) {
+        return
       }
 
       let x = evt.pageX - (existingOverlayDiv.clientWidth * 0.5)
       let y = evt.pageY
 
-      if (x < existingOverlayDiv.clientWidth * 1.25) {
+      if (x < existingOverlayDiv.clientWidth * 1.125) {
         x += existingOverlayDiv.clientWidth * 0.5
       }
 
       if (y < existingOverlayDiv.clientHeight * 2) {
-        y += existingOverlayDiv.clientHeight * 1.5
+        y += existingOverlayDiv.clientHeight * 1.25
       }
 
       if (x + (existingOverlayDiv.clientWidth * 1.5) >= document.body.clientWidth) {
-        x = document.body.clientWidth - (existingOverlayDiv.clientWidth * 1.5)
+        x = document.body.clientWidth - (existingOverlayDiv.clientWidth * 1.125)
       }
 
       existingOverlayDiv.style.left = 'calc(' + x + 'px)'
@@ -294,7 +296,7 @@ function hasActiveButtonInConfig (key) {
 function selectionChangeEvent (evt) {
   const selection = window.getSelection()
   const existingOverlayDiv = document.getElementById('textCompanionOverlay')
-  if (existingOverlayDiv !== null && !existingOverlayDiv.classList.contains('disabled')) {
+  if (existingOverlayDiv !== null) {
     existingOverlayDiv.classList.add('disabled')
   }
 
@@ -354,7 +356,7 @@ function recreateUI () {
   }
 
   overlayDiv.id = 'textCompanionOverlay'
-  // overlayDiv.classList.add('disabled')
+  overlayDiv.classList.add('disabled')
 
   let hasElement = false
 
