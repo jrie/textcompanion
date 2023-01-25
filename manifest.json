@@ -7,11 +7,17 @@
   "homepage_url": "https://github.com/jrie/textcompanion",
   "manifest_version": 2,
   "name": "TextCompanion",
-  "version": "0.0.17",
+  "version": "0.0.20",
   "permissions": ["<all_urls>", "storage", "activeTab"],
   "options_ui": {
     "page": "page_settings.html",
     "browser_style": true
+  },
+  "icons": {
+    "128": "icons/tc_128x128.png",
+    "16": "icons/tc_16x16.png",
+    "48": "icons/tc_48x48.png",
+    "64": "icons/tc_64x64.png"
   },
   "background": {
     "scripts": ["textcompanion_bg.js"]
