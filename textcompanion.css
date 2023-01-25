@@ -1,8 +1,4 @@
 /* Addon UI styles */
-body {
-    background-color: whitesmoke;
-}
-
 div#textCompanionOverlay {
     height: auto;
     padding: 0.35em 0.5em;
@@ -82,51 +78,4 @@ div#textCompanionOverlay>button:disabled {
 div#textCompanionOverlay>button:hover:not(:disabled) {
     background-color: yellow;
     border: 2px solid black;
-}
-
-/* Settings page styles */
-#settings {
-    color: black;
-}
-
-#settings h1 {
-    margin: 0px;
-    padding: 0px;
-    margin-top: 0.3em;
-}
-
-#settings h3 {
-    margin: 0px;
-    padding: 0.15ch 0px 0.6ch 0px;
-}
-
-#settings {
-    padding: 0.5em 1em;
-}
-#settingsArea {
-    padding: 0.3em 1em;
-}
-
-.settingsArea > hr {
-    margin: 0.95em 0px;
-    display: block;
-    border: 0;
-    border-bottom: 1px dashed darkslategray;
-}
-
-#buttonSettings > label  {
-    display: inline-block;
-    width: calc(50% - 0.6em);
-}
-
-#urlSettings > label {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 0.5em;
-}
-
-#urlSettings > label > input {
-    display: block;
-    width: 100%;
-    margin-top: 0.25em;
 }

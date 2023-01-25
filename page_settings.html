@@ -7,7 +7,60 @@
     <link rel="stylesheet" href="textcompanion.css" />
 </head>
 
-<body id="settings">
+<body id="settings" class="text_companion_settings">
+    <style type="text/css">
+        /* Settings page styles */
+        body#settings.text_companion_settings {
+            background-color: whitesmoke;
+        }
+
+        #settings {
+            color: black;
+        }
+
+        #settings h1 {
+            margin: 0px;
+            padding: 0px;
+            margin-top: 0.3em;
+        }
+
+        #settings h3 {
+            margin: 0px;
+            padding: 0.15ch 0px 0.6ch 0px;
+        }
+
+        #settings {
+            padding: 0.5em 1em;
+        }
+
+        #settingsArea {
+            padding: 0.3em 1em;
+        }
+
+        .settingsArea>hr {
+            margin: 0.95em 0px;
+            display: block;
+            border: 0;
+            border-bottom: 1px dashed darkslategray;
+        }
+
+        #buttonSettings>label {
+            display: inline-block;
+            width: calc(50% - 0.6em);
+        }
+
+        #urlSettings>label {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 0.5em;
+        }
+
+        #urlSettings>label>input {
+            display: block;
+            width: 100%;
+            margin-top: 0.25em;
+        }
+    </style>
     <h1>TextCompanion settings</h1>
     <div class="settingsArea" id="buttonSettings">
         <hr />
@@ -36,7 +89,7 @@
             <input type="checkbox" class="buttonOption" id="tc__googleSelectionButton">
             Google.com selection
         </label>
-        <hr/>
+        <hr />
     </div>
 
     <div class="settingsArea" id="textSettings">
@@ -45,9 +98,10 @@
             Used language code, like &quot;en&quot;, &quot;pl&quot;, &quot;fr&quot;, &quot;de&quot;...<br><br>This is used for translation, lookup and search:
             <input type="text" class="textOption" id="tc__translateLanguage" maxlength="2" placeholder="en" length="4" title="Use &quot;en&quot; for English, &quot;de&quot; for German, or &quot;fr&quot; for French, and so on.">
         </label>
-        <hr/>
+        <hr />
     </div>
 
     <script type="text/javascript" src="textcompanion.js"></script>
 </body>
+
 </html>
