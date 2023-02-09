@@ -200,7 +200,7 @@ function geizhalsSelection (evt) {
 function wiktionarySelection (evt) {
   evt.preventDefault()
   const lineDelimeter = ''
-  const wikitext = selectedText.replace(/[\t]{1,}/g, ' ').replace(/[ ]{2,}/g, '').replace(/[\n\r]{1,}/g, lineDelimeter).trim()
+  const wikitext = encodeURIComponent(selectedText.replace(/[\t]{1,}/g, ' ').replace(/[ ]{2,}/g, '').replace(/[\n\r]{1,}/g, lineDelimeter).trim())
 
   if (wikitext.length > 128) {
     window.alert('The selected text is ' + wikitext.length + ' characters long and will not be looked up in Wiktionary on purpose.')
