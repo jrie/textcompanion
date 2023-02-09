@@ -168,7 +168,7 @@ function googleSelection (evt) {
   evt.preventDefault()
 
   const lineDelimeter = ''
-  const searchWords = selectedText.replace(/[\t]{1,}/g, ' ').replace(/[ ]{2,}/g, '').replace(/[\n\r]{1,}/g, lineDelimeter).trim()
+  const searchWords = encodeURIComponent(selectedText.replace(/[\t]{1,}/g, ' ').replace(/[ ]{2,}/g, '').replace(/[\n\r]{1,}/g, lineDelimeter).trim())
 
   if (useChrome) {
     chrome.runtime.sendMessage({ links: ['https://www.google.com/search?q=' + searchWords] })
@@ -182,7 +182,7 @@ function geizhalsSelection (evt) {
   evt.preventDefault()
 
   const lineDelimeter = ''
-  const articleName = selectedText.replace(/[\n\r]{1,}/g, lineDelimeter).replace(/[\t]{1,}/g, '').replace(/[ ]{1,}/g, '+').trim()
+  const articleName = encodeURIComponent(selectedText.replace(/[\n\r]{1,}/g, lineDelimeter).replace(/[\t]{1,}/g, '').trim())
 
   if (articleName.length > 256) {
     window.alert('The article name is more than 256 characters, not looking up in Geizhals.eu')

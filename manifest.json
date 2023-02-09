@@ -7,7 +7,7 @@
   "homepage_url": "https://github.com/jrie/textcompanion",
   "manifest_version": 2,
   "name": "TextCompanion",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "permissions": ["<all_urls>", "storage", "activeTab"],
   "options_ui": {
     "page": "page_settings.html",
