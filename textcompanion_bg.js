@@ -99,6 +99,11 @@ function sendMessageToTab (info) {
     return
   }
 
+  if (info.menuItemId === 'settings') {
+    browser.runtime.openOptionsPage()
+    return
+  }
+
   browser.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     browser.tabs.sendMessage(tabs[0].id, { component: info.menuItemId })
   })
