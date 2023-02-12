@@ -1,5 +1,5 @@
 # textcompanion
-Browser addon to work on text selections. Quickly lookup, translate, search, and open links in background.
+Browser addon to work on text selections. Quickly lookup, translate, search, and open links, and detected text links, in background, and relative to the active browser tab.
 
 
 ### It is available at:
@@ -7,4 +7,10 @@ Browser addon to work on text selections. Quickly lookup, translate, search, and
 
 ### Preview
 
-![preview](https://user-images.githubusercontent.com/5701785/208359307-49aa99a4-ca1a-4755-a30e-b485b1f5e04b.png)
+#### Active overlay and context/right click menus
+
+![TextCompanion active overlay and context menu](https://user-images.githubusercontent.com/5701785/218313961-797bf9cc-9030-40a9-9e39-28e78d64567e.png)
+
+#### Settings
+
+![TextCompanion settings](https://user-images.githubusercontent.com/5701785/218314007-5904a404-4f1e-4c51-8c5c-75ab0b3bfb21.png)
