@@ -89,14 +89,15 @@ function sendMessageToTab (info) {
   if (useChrome) {
     if (info.menuItemId === 'settings') {
       chrome.runtime.openOptionsPage()
-      return
+      return true
     }
 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       chrome.tabs.sendMessage(tabs[0].id, { component: info.menuItemId })
+      return true
     })
 
-    return
+    return false
   }
 
   if (info.menuItemId === 'settings') {
@@ -264,7 +265,7 @@ function loadValues (data) {
       chrome.contextMenus.update('google', { visible: true })
     }
 
-    return
+    return false
   }
 
   if (!hasInConfigAndIsTrue('tc__translateMenu')) {

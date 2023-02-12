@@ -146,7 +146,9 @@ function findLinks (selection) {
   }
 
   if (useChrome) {
-    chrome.runtime.sendMessage({ status: { hasLinks: hasLinks, hasTextLinks: hasTextLinks } })
+    chrome.runtime.sendMessage({ status: { hasLinks: hasLinks, hasTextLinks: hasTextLinks } }, function () {
+      console.log(chrome.runtime.lastError)
+    })
   } else {
     browser.runtime.sendMessage({ status: { hasLinks: hasLinks, hasTextLinks: hasTextLinks } })
   }
@@ -598,6 +600,7 @@ function handleMessageFromBackground (message) {
 document.addEventListener('mouseup', updateMouseData)
 document.addEventListener('selectionchange', selectionChangeEvent)
 document.addEventListener('visibilitychange', reloadUI)
+document.addEventListener('focus', reloadUI)
 
 if (useChrome) {
   chrome.storage.local.get().then(loadValues, onLoadError)
