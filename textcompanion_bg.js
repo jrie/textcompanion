@@ -110,109 +110,6 @@ function sendMessageToTab (info) {
   })
 }
 
-if (useChrome) {
-  chrome.runtime.onMessage.addListener(handleMessages)
-
-  chrome.contextMenus.removeAll()
-
-  chrome.contextMenus.create({
-    title: 'Translate selection using DeepL.com',
-    id: 'deepl',
-    contexts: ['selection']
-  })
-
-  chrome.contextMenus.create({
-    title: 'Open links in background',
-    id: 'linksBackground',
-    contexts: ['selection']
-  })
-
-  chrome.contextMenus.create({
-    title: 'Open textlinks in background',
-    id: 'textLinksBackground',
-    contexts: ['selection']
-  })
-
-  chrome.contextMenus.create({
-    title: 'Wiktionary selection',
-    id: 'wiktionary',
-    contexts: ['selection']
-  })
-
-  chrome.contextMenus.create({
-    title: 'Search Geizhals.eu for selection',
-    id: 'geizhals',
-    contexts: ['selection']
-  })
-
-  chrome.contextMenus.create({
-    title: 'Google.com search selection',
-    id: 'google',
-    contexts: ['selection']
-  })
-
-  chrome.contextMenus.create({
-    title: 'Open TextCompanion settings',
-    id: 'settings',
-    contexts: ['all']
-  })
-
-  chrome.contextMenus.onClicked.addListener(sendMessageToTab)
-  chrome.storage.local.get().then(loadValues, onLoadError)
-} else {
-  browser.runtime.onMessage.addListener(handleMessages)
-
-  browser.contextMenus.create({
-    title: 'Translate selection using DeepL.com',
-    id: 'deepl',
-    contexts: ['selection'],
-    icons: { 16: 'img/language-solid.svg' }
-  })
-
-  browser.contextMenus.create({
-    title: 'Open links in background',
-    id: 'linksBackground',
-    contexts: ['selection'],
-    icons: { 16: 'img/square-arrow-up-right-solid.svg' }
-  })
-
-  browser.contextMenus.create({
-    title: 'Open textlinks in background',
-    id: 'textLinksBackground',
-    contexts: ['selection'],
-    icons: { 16: 'img/link-solid.svg' }
-  })
-
-  browser.contextMenus.create({
-    title: 'Wiktionary selection',
-    id: 'wiktionary',
-    contexts: ['selection'],
-    icons: { 16: 'img/spell-check-solid.svg' }
-  })
-
-  browser.contextMenus.create({
-    title: 'Search Geizhals.eu for selection',
-    id: 'geizhals',
-    contexts: ['selection'],
-    icons: { 16: 'img/cart-shopping-solid.svg' }
-  })
-
-  browser.contextMenus.create({
-    title: 'Google.com search selection',
-    id: 'google',
-    contexts: ['selection'],
-    icons: { 16: 'img/magnifying-glass-solid.svg' }
-  })
-
-  browser.contextMenus.create({
-    title: 'Open TextCompanion settings',
-    id: 'settings',
-    contexts: ['all']
-  })
-
-  browser.contextMenus.onClicked.addListener(sendMessageToTab)
-}
-
 function hasInConfigAndIsTrue (key) {
   if (localData[key] === undefined || localData[key] === true) {
     return true
@@ -311,7 +208,105 @@ function onLoadError (err) {
 }
 
 if (useChrome) {
+  chrome.runtime.onMessage.addListener(handleMessages)
+  chrome.contextMenus.removeAll()
+
+  chrome.contextMenus.create({
+    title: 'Translate selection using DeepL.com',
+    id: 'deepl',
+    contexts: ['selection']
+  })
+
+  chrome.contextMenus.create({
+    title: 'Open links in background',
+    id: 'linksBackground',
+    contexts: ['selection']
+  })
+
+  chrome.contextMenus.create({
+    title: 'Open textlinks in background',
+    id: 'textLinksBackground',
+    contexts: ['selection']
+  })
+
+  chrome.contextMenus.create({
+    title: 'Wiktionary selection',
+    id: 'wiktionary',
+    contexts: ['selection']
+  })
+
+  chrome.contextMenus.create({
+    title: 'Search Geizhals.eu for selection',
+    id: 'geizhals',
+    contexts: ['selection']
+  })
+
+  chrome.contextMenus.create({
+    title: 'Google.com search selection',
+    id: 'google',
+    contexts: ['selection']
+  })
+
+  chrome.contextMenus.create({
+    title: 'Open TextCompanion settings',
+    id: 'settings',
+    contexts: ['all']
+  })
+
+  chrome.contextMenus.onClicked.addListener(sendMessageToTab)
   chrome.storage.local.get().then(loadValues, onLoadError)
 } else {
+  browser.runtime.onMessage.addListener(handleMessages)
+  browser.contextMenus.removeAll()
+
+  browser.contextMenus.create({
+    title: 'Translate selection using DeepL.com',
+    id: 'deepl',
+    contexts: ['selection'],
+    icons: { 16: 'img/language-solid.svg' }
+  })
+
+  browser.contextMenus.create({
+    title: 'Open links in background',
+    id: 'linksBackground',
+    contexts: ['selection'],
+    icons: { 16: 'img/square-arrow-up-right-solid.svg' }
+  })
+
+  browser.contextMenus.create({
+    title: 'Open textlinks in background',
+    id: 'textLinksBackground',
+    contexts: ['selection'],
+    icons: { 16: 'img/link-solid.svg' }
+  })
+
+  browser.contextMenus.create({
+    title: 'Wiktionary selection',
+    id: 'wiktionary',
+    contexts: ['selection'],
+    icons: { 16: 'img/spell-check-solid.svg' }
+  })
+
+  browser.contextMenus.create({
+    title: 'Search Geizhals.eu for selection',
+    id: 'geizhals',
+    contexts: ['selection'],
+    icons: { 16: 'img/cart-shopping-solid.svg' }
+  })
+
+  browser.contextMenus.create({
+    title: 'Google.com search selection',
+    id: 'google',
+    contexts: ['selection'],
+    icons: { 16: 'img/magnifying-glass-solid.svg' }
+  })
+
+  browser.contextMenus.create({
+    title: 'Open TextCompanion settings',
+    id: 'settings',
+    contexts: ['all']
+  })
+
+  browser.contextMenus.onClicked.addListener(sendMessageToTab)
   browser.storage.local.get().then(loadValues, onLoadError)
 }
