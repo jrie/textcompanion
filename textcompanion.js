@@ -346,6 +346,11 @@ function loadValues (data) {
 
   updateUI()
   recreateUI()
+  if (useChrome) {
+    chrome.runtime.sendMessage({ reCreateMenu: true })
+  } else {
+    browser.runtime.sendMessage({ reCreateMenu: true })
+  }
 
   if (window.location.href.endsWith('page_settings.html') && window.location.href.indexOf('extension') !== -1) {
     return
@@ -546,6 +551,7 @@ function saveData (evt) {
   }
 
   saveValues(localData)
+  return false
 }
 
 // --------------------------------------------------------------------
@@ -600,7 +606,7 @@ function handleMessageFromBackground (message) {
 document.addEventListener('mouseup', updateMouseData)
 document.addEventListener('selectionchange', selectionChangeEvent)
 document.addEventListener('visibilitychange', reloadUI)
-document.addEventListener('focus', reloadUI)
+window.addEventListener('focus', reloadUI)
 
 if (useChrome) {
   chrome.storage.local.get().then(loadValues, onLoadError)
