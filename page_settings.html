@@ -44,7 +44,8 @@
             border-bottom: 1px dashed darkslategray;
         }
 
-        #buttonSettings>label {
+        #buttonSettings>label,
+        #menuSettings>label {
             display: inline-block;
             width: calc(50% - 0.6em);
         }
@@ -64,6 +65,13 @@
     <h1>TextCompanion settings</h1>
     <div class="settingsArea" id="buttonSettings">
         <hr />
+        
+        <h3>Use overlay menu?</h3>
+        <label>
+            <input type="checkbox" class="buttonOption" id="tc__useOverlay">
+            Use the overlay menu
+        </label>
+
         <h3>Active overlay buttons</h3>
         <label>
             <input type="checkbox" class="buttonOption" id="tc__translateButton">
@@ -87,6 +95,36 @@
         </label>
         <label>
             <input type="checkbox" class="buttonOption" id="tc__googleSelectionButton">
+            Google.com selection
+        </label>
+        <hr />
+    </div>
+
+    <div class="settingsArea" id="menuSettings">
+        <hr />
+        <h3>Active Selection context menus</h3>
+        <label>
+            <input type="checkbox" class="buttonOption" id="tc__translateMenu">
+            Translate selection using DeepL.com
+        </label>
+        <label>
+            <input type="checkbox" class="buttonOption" id="tc__openLinkMenu">
+            Open links in background
+        </label>
+        <label>
+            <input type="checkbox" class="buttonOption" id="tc__openTextLinkMenu">
+            Open selected textlinks in background
+        </label>
+        <label>
+            <input type="checkbox" class="buttonOption" id="tc__wiktionaryMenu">
+            Look up in Wiktionary
+        </label>
+        <label>
+            <input type="checkbox" class="buttonOption" id="tc__geizhalsMenu">
+            Look up in Geizhals.eu
+        </label>
+        <label>
+            <input type="checkbox" class="buttonOption" id="tc__googleSelectionMenu">
             Google.com selection
         </label>
         <hr />
