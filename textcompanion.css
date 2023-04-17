@@ -17,6 +17,7 @@ div#textCompanionOverlay {
 div#textCompanionOverlay.disabled {
     opacity: 0.0;
     pointer-events: none;
+    display: none;
 }
 
 div#textCompanionOverlay>button {
