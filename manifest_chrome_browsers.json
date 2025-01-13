@@ -1,8 +1,4 @@
 {
-  "developer": {
-    "name": "Jan Riechers",
-    "url": "https://www.dwrox.net"
-  },
   "description": "Provides a optional overlay, and context menu for browser text selections and quickly open links in background.",
   "homepage_url": "https://github.com/jrie/textcompanion",
   "manifest_version": 3,
@@ -27,10 +23,22 @@
     "64": "icons/tc_64x64.png"
   },
   "background": {
-    "scripts": [
-      "textcompanion_bg.js"
-    ]
+    "service_worker": "textcompanion_bg.js",
+    "all_frames": true
   },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/img/*",
+        "textcompanion.css",
+        "textcompanion_chrome.css"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ],
   "content_scripts": [
     {
       "matches": [
@@ -41,9 +49,11 @@
         "textcompanion.js"
       ],
       "css": [
-        "textcompanion.css"
+        "textcompanion.css",
+        "textcompanion_chrome.css"
       ],
-      "run_at": "document_idle"
+      "run_at": "document_idle",
+      "all_frames": true
     }
   ]
 }
