@@ -11,22 +11,25 @@
     <style type="text/css">
         /* Settings page styles */
         body#settings.text_companion_settings {
-            background-color: whitesmoke;
-        }
-
-        #settings {
-            color: black;
+            background-color: #333;
+            color: #ccc;
+            font-size: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 1.5rem 1rem;
         }
 
         #settings h1 {
-            margin: 0px;
-            padding: 0px;
+            margin: 0;
+            padding: 0;
             margin-top: 0.3em;
+            font-size: 1.5rem;
         }
 
-        #settings h3 {
+        #settings h2 {
             margin: 0px;
             padding: 0.15ch 0px 0.6ch 0px;
+            font-size: 1rem;
         }
 
         #settings {
@@ -34,10 +37,10 @@
         }
 
         #settingsArea {
-            padding: 0.3em 1em;
+            padding: 0 1em;
         }
 
-        .settingsArea>hr {
+        hr {
             margin: 0.95em 0px;
             display: block;
             border: 0;
@@ -45,34 +48,32 @@
         }
 
         #buttonSettings>label,
-        #menuSettings>label {
-            display: inline-block;
-            width: calc(50% - 0.6em);
-        }
-
-        #urlSettings>label {
+        #menuSettings>label,
+        #textSettings>label {
             display: inline-block;
             width: 100%;
-            margin-bottom: 0.5em;
+            font-size: 0.75rem;
+            margin: 0;
+            padding: 0;
         }
 
-        #urlSettings>label>input {
+        .textOption {
+            padding: 0.3rem 0.7rem;
             display: block;
-            width: 100%;
-            margin-top: 0.25em;
+            margin-top: 0.2rem;
+            width: calc(100% - 1.5rem);
         }
     </style>
     <h1>TextCompanion settings</h1>
+    <hr />
     <div class="settingsArea" id="buttonSettings">
-        <hr />
-        
-        <h3>Use overlay menu?</h3>
+        <h2>Use overlay menu?</h2>
         <label>
             <input type="checkbox" class="buttonOption" id="tc__useOverlay">
             Use the overlay menu
         </label>
-
-        <h3>Active overlay buttons</h3>
+        <hr />
+        <h2>Active overlay buttons</h2>
         <label>
             <input type="checkbox" class="buttonOption" id="tc__translateButton">
             Translate selection using DeepL.com
@@ -97,12 +98,12 @@
             <input type="checkbox" class="buttonOption" id="tc__googleSelectionButton">
             Google.com selection
         </label>
-        <hr />
     </div>
 
+    <hr />
+
     <div class="settingsArea" id="menuSettings">
-        <hr />
-        <h3>Active Selection context menus</h3>
+        <h2>Active Selection context menus</h2>
         <label>
             <input type="checkbox" class="buttonOption" id="tc__translateMenu">
             Translate selection using DeepL.com
@@ -127,16 +128,16 @@
             <input type="checkbox" class="buttonOption" id="tc__googleSelectionMenu">
             Google.com selection
         </label>
-        <hr />
     </div>
 
+    <hr />
+
     <div class="settingsArea" id="textSettings">
-        <h3>Translation settings</h3>
+        <h2>Translation settings</h2>
         <label>
             Used language code, like &quot;en&quot;, &quot;pl&quot;, &quot;fr&quot;, &quot;de&quot;...<br><br>This is used for translation, lookup and search:
-            <input type="text" class="textOption" id="tc__translateLanguage" maxlength="2" placeholder="en" length="4" title="Use &quot;en&quot; for English, &quot;de&quot; for German, or &quot;fr&quot; for French, and so on.">
         </label>
-        <hr />
+        <input type="text" class="textOption" id="tc__translateLanguage" maxlength="6" placeholder="en" title="Use &quot;en&quot; for English, &quot;de&quot; for German, or &quot;fr&quot; for French, and so on.">
     </div>
 
     <script type="text/javascript" src="textcompanion.js"></script>
