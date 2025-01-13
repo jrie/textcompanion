@@ -1,6 +1,5 @@
 // --------------------------------------------------------------------
 const useChrome = typeof (browser) === 'undefined';
-const useChrome = typeof (browser) === 'undefined';
 
 // --------------------------------------------------------------------
 let foundLinks = [];
