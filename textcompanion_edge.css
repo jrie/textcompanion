@@ -1,0 +1,23 @@
+div#textCompanionOverlay>button#tc__translateButton {
+    background-image: url('chrome-extension://mlhinmfhbmjiohcdogkfdabpccbmigec/img/language-solid.svg');
+}
+
+div#textCompanionOverlay>button#tc__openLinkButton {
+    background-image: url('chrome-extension://mlhinmfhbmjiohcdogkfdabpccbmigec/img/square-arrow-up-right-solid.svg');
+}
+
+div#textCompanionOverlay>button#tc__wiktionaryButton {
+    background-image: url('chrome-extension://mlhinmfhbmjiohcdogkfdabpccbmigec/img/spell-check-solid.svg');
+}
+
+div#textCompanionOverlay>button#tc__googleSelectionButton {
+    background-image: url('chrome-extension://mlhinmfhbmjiohcdogkfdabpccbmigec/img/magnifying-glass-solid.svg');
+}
+
+div#textCompanionOverlay>button#tc__geizhalsButton {
+    background-image: url('chrome-extension://mlhinmfhbmjiohcdogkfdabpccbmigec/img/cart-shopping-solid.svg');
+}
+
+div#textCompanionOverlay>button#tc__openTextLinkButton {
+    background-image: url('chrome-extension://mlhinmfhbmjiohcdogkfdabpccbmigec/img/link-solid.svg');
+}
