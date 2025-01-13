@@ -1,7 +1,7 @@
 div#textCompanionOverlay>button#tc__translateButton {
     background-image: url('chrome-extension://lolnkogccnkikimapppanjkkegjiakln/img/language-solid.svg');
 }
-.2
+
 div#textCompanionOverlay>button#tc__openLinkButton {
     background-image: url('chrome-extension://lolnkogccnkikimapppanjkkegjiakln/img/square-arrow-up-right-solid.svg');
 }

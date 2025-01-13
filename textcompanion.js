@@ -1,5 +1,6 @@
 // --------------------------------------------------------------------
 const useChrome = typeof (browser) === 'undefined';
+const useChrome = typeof (browser) === 'undefined';
 
 // --------------------------------------------------------------------
 let foundLinks = [];
@@ -536,9 +537,6 @@ function saveData (evt) {
       if (keyValue.length !== 0 && keyValue.length < 2) {
         window.alert('Language code must consists of two letters. Like "de" for German, "en" for English, or "fr" for French.');
         return;
-      } else if (keyValue.length > 2) {
-        window.alert('Language code must consists of two letters. Like "de" for German, "en" for English, or "fr" for French.');
-        return;
       } else if (keyValue.length === 0) {
         keyValue = 'en';
       }
@@ -562,7 +560,13 @@ function onLoadError (err) {
 
 // --------------------------------------------------------------------
 function reloadUI (evt) {
-  if (window.location.href.endsWith('page_settings.html') && window.location.href.indexOf('extension') !== -1) {
+  if (chrome.runtime.lastError) {
+    const errorMsg = chrome.runtime.lastError.message;
+    console.log('errorMsg', errorMsg);
+    return;
+  }
+
+  if (window.location.href.endsWith('page_settings.html') && window.location.href.indexOf('//extensions') > -1) {
     return;
   }
 
@@ -609,7 +613,7 @@ document.addEventListener('visibilitychange', reloadUI);
 window.addEventListener('focus', reloadUI);
 
 if (useChrome) {
-  chrome.storage.local.get().then(loadValues, onLoadError);
+  chrome.storage.local.get(null).then(loadValues, onLoadError);
   chrome.runtime.onMessage.addListener(handleMessageFromBackground);
 } else {
   browser.storage.local.get().then(loadValues, onLoadError);
