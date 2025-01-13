@@ -3,6 +3,12 @@
     "name": "Jan Riechers",
     "url": "https://www.dwrox.net"
   },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{f97c8b21-34c7-4977-8e60-df16d1869e5b}",
+      "strict_min_version": "109.0"
+    }
+  },
   "description": "Provides a optional overlay, and context menu for browser text selections and quickly open links in background.",
   "homepage_url": "https://github.com/jrie/textcompanion",
   "manifest_version": 3,
