@@ -7,6 +7,8 @@ let hasLinks = false;
 let textLinks = [];
 let hasTextLinks = false;
 let selectedText = '';
+let showOverlay = true;
+let hasSpecialKey = false;
 const localData = {
   tc__translateButton: true,
   tc__openLinkButton: true,
@@ -16,6 +18,7 @@ const localData = {
   tc__openTextLinkButton: true,
   tc__translateLanguage: 'en',
   tc__useOverlay: true,
+  tc__overlayKey: false,
   tc__translateMenu: true,
   tc__openLinkMenu: true,
   tc__openTextLinkMenu: true,
@@ -256,6 +259,10 @@ function translateSelection (evt) {
 
 // --------------------------------------------------------------------
 function updateMouseData (evt) {
+  if (!showOverlay) {
+    return;
+  }
+
   const existingOverlayDiv = document.getElementById('textCompanionOverlay');
   if (existingOverlayDiv !== null) {
     const selection = window.getSelection();
@@ -273,7 +280,7 @@ function updateMouseData (evt) {
         return;
       }
 
-      let x = evt.pageX - (existingOverlayDiv.clientWidth * 0.5);
+      let x = evt.pageX + 18 - (existingOverlayDiv.clientWidth * 0.25);
       let y = evt.pageY;
 
       if (x < existingOverlayDiv.clientWidth * 1.125) {
@@ -346,6 +353,7 @@ function loadValues (data) {
 
   updateUI();
   recreateUI();
+
   if (useChrome) {
     chrome.runtime.sendMessage({ reCreateMenu: true });
   } else {
@@ -390,6 +398,26 @@ function recreateUI () {
   overlayDiv.classList.add('disabled');
 
   let hasElement = false;
+  showOverlay = true;
+  if (hasInConfigAndIsTrue('tc__overlayKey')) {
+    if (!hasSpecialKey) {
+      showOverlay = false;
+    }
+
+    document.addEventListener('keydown', function (evt) {
+      if (evt.key === 'Control') {
+        hasSpecialKey = true;
+        showOverlay = true;
+      }
+    });
+
+    document.addEventListener('keyup', function (evt) {
+      if (evt.key === 'Control') {
+        hasSpecialKey = false;
+        showOverlay = false;
+      }
+    });
+  }
 
   if (hasInConfigAndIsTrue('tc__translateButton')) {
     const translateButton = document.createElement('button');

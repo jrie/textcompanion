@@ -9,6 +9,7 @@ const localData = {
   tc__openTextLinkButton: true,
   tc__translateLanguage: 'en',
   tc__useOverlay: true,
+  tc__overlayKey: false,
   tc__translateMenu: true,
   tc__openLinkMenu: true,
   tc__openTextLinkMenu: true,

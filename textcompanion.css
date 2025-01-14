@@ -5,12 +5,9 @@ div#textCompanionOverlay {
     background-color: #333;
     position: absolute;
     border-radius: 12px;
-    font-size: 0.75em;
-    display: flex;
+    display: inline-block;
     font-size: 12px;
     z-index: 99999;
-    display: inherit;
-    max-width: calc(1.5em + 48px);
 }
 
 div#textCompanionOverlay.disabled {
@@ -22,7 +19,6 @@ div#textCompanionOverlay.disabled {
 }
 
 div#textCompanionOverlay>button {
-    box-sizing: border-box;
     display: block;
     color: black;
     border: 1px solid transparent;
