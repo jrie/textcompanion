@@ -1,5 +1,5 @@
 # textcompanion
-Use text-selections to open up a quick, icon filled, menu with various actions. Or use the same opening options from right click menu / context menu.
+A browser addon/extension to use text selections to open up a quick, icon filled, menu with various actions. Or use the same opening options from right click menu / context menu.
 
 From the overlay menu, you can:
 * open Deepl.com to translate the selection
@@ -9,7 +9,7 @@ From the overlay menu, you can:
 * search at Geizhals.eu price comparison
 * Google the selection
 
-This overlay menu can be configured, and the options enabled/disabled and also ordered.
+This overlay menu can be configured, and the options enabled/disabled and also ordered from the extension settings.
 Also it is possible to use the "ctrl" (Control/Strg) key to show the overlay menu on demand to avoid appereance during other work.
 
 Context menu
@@ -17,6 +17,9 @@ Context menu
 * Quickly open addon settings from context menu
 
 The menu can be configured from within the settings page of the addon as well as the default language for translation and lookup using the language ISO code.
+
+## Download
+[Firefox](https://addons.mozilla.org/en-US/firefox/addon/textcompanion/) | [Opera](https://addons.opera.com/de/extensions/details/textcompanion/) | [Chrome](https://chromewebstore.google.com/detail/textcompanion/blmdednedmcbdkeoppfhphhfmelmpjkc) | Edge (is on the way)
 
 ## Promo Image with optional overlay menu
 ![textcompanion_640x400](https://github.com/user-attachments/assets/2737a21c-13a4-463a-8101-e38e7de2deed)
