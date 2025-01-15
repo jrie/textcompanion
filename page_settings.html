@@ -9,7 +9,6 @@
 
 <body id="settings" class="text_companion_settings">
     <style type="text/css">
-        /* Settings page styles */
         body#settings.text_companion_settings {
             background-color: #333;
             color: #ccc;
@@ -46,8 +45,8 @@
             border: 0;
             border-bottom: 1px dashed darkslategray;
         }
-
         #buttonSettings>label,
+        #orderSettings>label,
         #menuSettings>label,
         #textSettings>label {
             display: inline-block;
@@ -63,74 +62,109 @@
             margin-top: 0.2rem;
             width: calc(100% - 1.5rem);
         }
+
+        input[type='number'] {
+            width: calc(3ch + 1.5rem);
+        }
+
     </style>
     <h1>TextCompanion settings</h1>
     <hr />
     <div class="settingsArea" id="buttonSettings">
         <h2>Use overlay menu?</h2>
-        <label>
+        <label title="Use the overlay menu?">
             <input type="checkbox" class="buttonOption" id="tc__useOverlay">
             Use the overlay menu
         </label>
-        <label>
+        <label title="Use and hold 'ctrl' (Control) key to show overlay after selection">
             <input type="checkbox" class="buttonOption" id="tc__overlayKey">
-            Use 'ctrl' key to show overlay on selection
+            Use and hold 'ctrl' (Control) key to show overlay after selection
         </label>
         <hr />
         <h2>Active overlay buttons</h2>
-        <label>
+        <label title="Translate selection using DeepL.com">
             <input type="checkbox" class="buttonOption" id="tc__translateButton">
             Translate selection using DeepL.com
         </label>
-        <label>
+        <label title="Open links in background">
             <input type="checkbox" class="buttonOption" id="tc__openLinkButton">
             Open links in background
         </label>
-        <label>
+        <label title="Open selected textlinks in background">
             <input type="checkbox" class="buttonOption" id="tc__openTextLinkButton">
             Open selected textlinks in background
         </label>
-        <label>
+        <label title="Look up in Wiktionary">
             <input type="checkbox" class="buttonOption" id="tc__wiktionaryButton">
             Look up in Wiktionary
         </label>
-        <label>
+        <label title="Look up in Geizhals.eu">
             <input type="checkbox" class="buttonOption" id="tc__geizhalsButton">
             Look up in Geizhals.eu
         </label>
-        <label>
+        <label title="Search selection on Google.com">
             <input type="checkbox" class="buttonOption" id="tc__googleSelectionButton">
-            Google.com selection
+            Search selection on Google.com
+        </label>
+    </div>
+
+    <hr />
+
+    <div class="settingsArea" id="orderSettings">
+        <h2>Active overlay button order</h2>
+        <label title="Translate selection using DeepL.com">
+            <input type="number" min="0" max="10" maxlength="3" size="3" placeholder="0" class="orderOption" id="tc__translateOrder">
+            Translate selection using DeepL.com
+        </label>
+        <label title="Open links in background">
+            <input type="number" min="0" max="10" maxlength="3" size="3" placeholder="0" class="orderOption" id="tc__openLinkOrder">
+            Open links in background
+        </label>
+        <label title="Open selected textlinks in background">
+            <input type="number" min="0" max="10" maxlength="3" size="3" placeholder="0" class="orderOption" id="tc__openTextLinkOrder">
+            Open selected textlinks in background
+        </label>
+        <label title="Look up in Wiktionary">
+            <input type="number" min="0" max="10" maxlength="3" size="3" placeholder="0" class="orderOption" id="tc__wiktionaryOrder">
+            Look up in Wiktionary
+        </label>
+        <label title="Look up in Geizhals.eu">
+            <input type="number" min="0" max="10" maxlength="3" size="3" placeholder="0" class="orderOption" id="tc__geizhalsOrder">
+            Look up in Geizhals.eu
+        </label>
+        <label title="Search selection on Google.com">
+            <input type="number" min="0" max="10" maxlength="3" size="3" placeholder="0" class="orderOption" id="tc__googleSelectionOrder">
+            Search selection on Google.com
         </label>
     </div>
 
     <hr />
 
     <div class="settingsArea" id="menuSettings">
-        <h2>Active Selection context menus</h2>
-        <label>
+        <h2>Active selection context menus</h2>
+        <label title="Translate selection using DeepL.com">
             <input type="checkbox" class="buttonOption" id="tc__translateMenu">
             Translate selection using DeepL.com
         </label>
-        <label>
+        <label title="Open links in background">
             <input type="checkbox" class="buttonOption" id="tc__openLinkMenu">
             Open links in background
         </label>
-        <label>
+        <label title="Open selected textlinks in background">
             <input type="checkbox" class="buttonOption" id="tc__openTextLinkMenu">
             Open selected textlinks in background
         </label>
-        <label>
+        <label title="Look up in Wiktionary">
             <input type="checkbox" class="buttonOption" id="tc__wiktionaryMenu">
             Look up in Wiktionary
         </label>
-        <label>
+        <label title="Look up in Geizhals.eu">
             <input type="checkbox" class="buttonOption" id="tc__geizhalsMenu">
             Look up in Geizhals.eu
         </label>
-        <label>
+        <label title="Search selection on Google.com">
             <input type="checkbox" class="buttonOption" id="tc__googleSelectionMenu">
-            Google.com selection
+            Search selection on Google.com
         </label>
     </div>
 
